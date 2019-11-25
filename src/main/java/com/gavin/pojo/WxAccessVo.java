@@ -1,4 +1,4 @@
-package com.gavin.cfg;
+package com.gavin.pojo;
 
 /**
  * @title 公众号接口校验bean
