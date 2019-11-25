@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: dev
+    
+
+---
+#测试环境
+
+#服务器相关配置
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+#mybatis配置文件
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml    
+#spring配置
+spring:
+  profiles: dev
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  aop:
+    auto: true
+  #数据源
+  datasource:
+    jdbc-url: jdbc:mysql://localhost:3306/wechat?characterEncoding=utf8&serverTimezone=CTT
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
