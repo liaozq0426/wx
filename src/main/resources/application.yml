@@ -31,3 +31,15 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6779
+    timeout: 15000
+    database: 5
+    password: 'root'
+    lettuce:
+      pool:
+        max-active: 8 #最大连接数
+        max-idle: 8 #最大空闲数
+        max-wait: 15000  #最大连接阻塞等待时间
+        min-idle: 0 #最小空闲数

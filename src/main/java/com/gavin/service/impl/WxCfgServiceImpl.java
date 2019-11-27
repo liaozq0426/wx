@@ -6,10 +6,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gavin.cfg.WxAccessVo;
 import com.gavin.cfg.WxCfgEnum;
 import com.gavin.mapper.WxCfgMapper;
 import com.gavin.pojo.Wechat;
+import com.gavin.pojo.WxAccessVo;
 import com.gavin.pojo.WxCfg;
 import com.gavin.service.WxCfgService;
 import com.gavin.util.EncryptionUtil;

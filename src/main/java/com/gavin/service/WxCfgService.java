@@ -2,8 +2,8 @@ package com.gavin.service;
 
 import java.util.List;
 
-import com.gavin.cfg.WxAccessVo;
 import com.gavin.pojo.Wechat;
+import com.gavin.pojo.WxAccessVo;
 import com.gavin.pojo.WxCfg;
 
 public interface WxCfgService {

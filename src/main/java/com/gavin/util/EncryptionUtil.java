@@ -1,7 +1,5 @@
 package com.gavin.util;
 
-import java.security.MessageDigest;
-
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -38,29 +36,6 @@ public class EncryptionUtil {
 	public static String md5(String data) {
 		return DigestUtils.md5Hex(data);
 	}
-	
-	
-	public static String md5ByCharset(String s, String charset) {
-	    try {
-	        byte[] btInput = s.getBytes(charset);
-	        MessageDigest mdInst = MessageDigest.getInstance("MD5");
-	        mdInst.update(btInput);
-	        byte[] md = mdInst.digest();
-	        StringBuffer sb = new StringBuffer();
-	        for (int i = 0; i < md.length; i++) {
-	            int val = ((int) md[i]) & 0xff;
-	            if (val < 16){
-	                sb.append("0");
-	            }
-	            sb.append(Integer.toHexString(val));
-	        }
-	        return sb.toString();
-	    } catch (Exception e) {
-	        return null;
-	    }
-	 
-	}
-
 	
 	/**
 	 * @title md5加盐加密
