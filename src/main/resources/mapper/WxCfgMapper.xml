@@ -8,6 +8,7 @@
 		<result column="value" property="value" />
 		<result column="parent_id" property="parentId" />
 		<result column="platform" property="platform" />
+		<result column="wx_type" property="wxType" />
 		<result column="enabled" property="enabled" jdbcType="TINYINT" javaType="Boolean" />
 		<result column="desc" property="desc" />
 	</resultMap>
@@ -19,6 +20,7 @@
 		,IF(type='menu' or type = 'url',concat((SELECT value FROM wx_cfg WHERE type = 'app_url' AND enabled = 1 AND platform = #{platform}) , value) , value) AS value   
 		,parent_id
 		,platform
+		,wx_type
 		,enabled
 		,a.desc
 		from wx_cfg a

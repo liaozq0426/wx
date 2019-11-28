@@ -1,11 +1,11 @@
 package com.gavin.util;
 
+import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.Map;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.DependsOn;
@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import com.gavin.pojo.AccessToken;
+import com.gavin.pojo.Menu;
 import com.gavin.pojo.WxApiCfg;
 import com.google.gson.Gson;
 
@@ -28,6 +29,40 @@ public class WxUtil {
     @Autowired
     public void setRestTemplate(@Qualifier("restTemplate") RestTemplate restTemplate) throws Exception{
         WxUtil.restTemplate = restTemplate;
+    }
+    
+    
+    /**
+     * @title 创建微信菜单
+     * @param menu
+     * @param accessToken
+     * @return
+     */
+    public static Map<String , Object> createMenu(Menu menu , String accessToken) throws Exception{
+        String createMenuUrl = WxApiCfg.createMenuUrl
+                .replace(WxApiCfg.FORM_PARAM_ACCESS_TOKEN, accessToken);
+        @SuppressWarnings("unchecked")
+		Map<String , Object> msg = restTemplate.postForObject(createMenuUrl, menu, Map.class);
+        return msg;
+    }
+    
+    /**
+     * @title 创建微信服务号view按钮完整url
+     * @param appId
+     * @param scope
+     * @param redirectUrl
+     * @param state
+     * @return
+     * @throws Exception
+     */
+    public static String makeViewUrl(String appId , String scope , String  redirectUrl, String state) throws Exception {
+        redirectUrl = URLEncoder.encode(redirectUrl, "UTF-8");
+        String viewUrl = WxApiCfg.codeUrl
+                .replace(WxApiCfg.FORM_PARAM_APPID, appId)
+                .replace(WxApiCfg.FORM_PARAM_SCOPE , scope)
+                .replace(WxApiCfg.FORM_PARAM_REDIRECT_URI, redirectUrl)
+                .replaceAll(WxApiCfg.FORM_PARAM_STATE, state);
+        return viewUrl;
     }
 	
 	/**

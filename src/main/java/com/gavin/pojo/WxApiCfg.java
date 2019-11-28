@@ -13,6 +13,7 @@ public class WxApiCfg {
 
     // 网页授权scope
     public static final String SCOPE_BASE = "snsapi_base";
+    // 获取用户的基本信息
     public static final String SCOPE_USERINFO = "snsapi_userinfo";
 
 

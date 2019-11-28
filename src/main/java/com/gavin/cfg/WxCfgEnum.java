@@ -6,6 +6,8 @@ public enum WxCfgEnum {
 	,WX_KEY_APPID("wx_key" , "appId")
 	,WX_KEY_APPSECRET("wx_key" , "appSecret")
 	,MENU("menu")
+	,WX_TYPE_SERVICE("service")
+	,WX_TYPE_SUBSCRIBE("subscribe")
 	;
 	private String type;	// 对应wx_cfg表中的type字段
 	private String name;	// 对应wx_cfg表中的name字段
