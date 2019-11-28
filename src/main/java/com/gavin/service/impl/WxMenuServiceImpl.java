@@ -1,6 +1,4 @@
 package com.gavin.service.impl;
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -158,9 +156,4 @@ public class WxMenuServiceImpl implements WxMenuService{
 		}
 		return null;
 	}
-	
-	
-	
-	
-	
 }
