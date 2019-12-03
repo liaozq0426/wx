@@ -13,10 +13,12 @@ public class WxMessageConst {
     public static String MSG_TYPE_EVENT = "event";	// 事件消息
     
     public static String EVENT = "Event";	// 值可以为subscribe、unsubscribe等
+    public static String EVENT_KEY = "EventKey"; // 事件KEY值，与自定义菜单接口中KEY值对应
     
    
     public static String EVENT_TYPE_SUBSCRIBE = "subscribe";  //订阅
     public static String EVENT_TYPE_UN_SUBSCRIBE = "unsubscribe";  //取消订阅
+    public static String EVENT_TYPE_CLICK = "CLICK";	// 点击菜单
     
     public static String FROM_USER_NAME = "FromUserName";
     public static String TO_USER_NAME = "ToUserName";

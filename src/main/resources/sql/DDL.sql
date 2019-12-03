@@ -21,3 +21,12 @@ CREATE TABLE `wx_token` (
   `refresh_count` int(11) DEFAULT NULL COMMENT '刷新次数',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+CREATE TABLE `wx_reply` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增主键',
+  `openid` varchar(36) DEFAULT NULL COMMENT '用户标识',
+  `request` text COMMENT '请求内容',
+  `response` text COMMENT '响应内容',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;

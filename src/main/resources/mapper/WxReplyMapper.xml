@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gavin.mapper.WxReplyMapper">
+	<resultMap type="com.gavin.pojo.WxReply" id="WxReplyMap">
+		<id column="id" property="id" />
+		<result column="openid" property="openid" />
+		<result column="request" property="request" />
+		<result column="response" property="response" />
+		<result column="create_time" property="createTime" />
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.gavin.pojo.WxReply">
+		insert into wx_reply
+		(
+			openid
+			,request
+			,response
+			,create_time
+		)
+		values
+		(
+			#{openid}
+			,#{request}
+			,#{response}
+			,now()
+		)
+	</insert>
+	
+</mapper>
